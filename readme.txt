@@ -34,6 +34,9 @@ Order ID, Order Number, Date, Status, Customer Name, Email, Phone, Billing Addre
 * Single-request export, not a background/batch job -- suited to date-range-scoped exports rather than exporting an entire multi-year order history in one click
 * CSV format only, no XLSX
 
+= Enjoying this plugin? =
+If it helps your site, please consider [leaving an honest review on WordPress.org](https://wordpress.org/support/plugin/hdwebmobile-order-export/reviews/#new-post) -- it helps other WordPress users find it. Found a problem or have an idea? Please [open a support topic](https://wordpress.org/support/plugin/hdwebmobile-order-export/) first so it can be fixed.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-order-export` directory, or install the plugin through the WordPress plugins screen directly.
