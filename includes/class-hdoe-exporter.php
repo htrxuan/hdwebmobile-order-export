@@ -57,8 +57,11 @@ class HDOE_Exporter extends \WC_CSV_Exporter
     {
         $this->column_names = $this->get_default_column_names();
 
+        // 'type' => 'shop_order' keeps refunds out: wc_get_orders() returns refund objects too,
+        // and they have no order number, billing details or items to export.
         $args = array(
             'limit'   => -1,
+            'type'    => 'shop_order',
             'orderby' => 'date',
             'order'   => 'DESC',
         );
@@ -66,11 +69,15 @@ class HDOE_Exporter extends \WC_CSV_Exporter
         if (!empty($this->statuses)) {
             $args['status'] = $this->statuses;
         }
-        if ('' !== $this->date_from) {
-            $args['date_after'] = $this->date_from;
-        }
-        if ('' !== $this->date_to) {
-            $args['date_before'] = $this->date_to;
+
+        // date_created with >=, <= and ... includes both end days, so a "To date" of the
+        // 9th also exports orders placed on the 9th.
+        if ('' !== $this->date_from && '' !== $this->date_to) {
+            $args['date_created'] = $this->date_from . '...' . $this->date_to;
+        } elseif ('' !== $this->date_from) {
+            $args['date_created'] = '>=' . $this->date_from;
+        } elseif ('' !== $this->date_to) {
+            $args['date_created'] = '<=' . $this->date_to;
         }
 
         $orders = wc_get_orders($args);
