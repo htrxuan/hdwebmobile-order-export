@@ -4,7 +4,7 @@
  * Plugin Name: HDWebmobile Order Export
  * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-order-export/
  * Description: Export WooCommerce orders to CSV, filtered by date range and status. Every query goes through wc_get_orders() (never raw SQL) and CSV output extends WooCommerce's own WC_CSV_Exporter, so formula-injection-safe escaping comes from WooCommerce core itself.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: htrxuan - Han Tran
  * Author URI: https://hdwebmobile.com/
  * License: GPLv2 or later
@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HDOE_VERSION', '1.0.0');
+define('HDOE_VERSION', '1.0.1');
 define('HDOE_PLUGIN_FILE', __FILE__);
 define('HDOE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('HDOE_PLUGIN_URL', plugin_dir_url(__FILE__));

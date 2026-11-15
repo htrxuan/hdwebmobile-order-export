@@ -5,7 +5,7 @@ Tags: woocommerce, order export, csv export, orders, export
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,9 @@ Click "Download CSV" -- the file downloads immediately, nothing is saved on the 
 3. A downloaded export opened in a spreadsheet.
 
 == Changelog ==
+
+= 1.0.1 =
+* The WooCommerce > HDWebmobile Overview page now has a short introduction to Store Guardian, a separate paid plugin that test-buys from your checkout every hour. It is hidden once Store Guardian is active. No changes to this plugin's own features.
 
 = 1.0.0 =
 * Initial release: date-range and status-filtered CSV export, built on WooCommerce's own order-query and CSV-exporter classes, zero configuration.
